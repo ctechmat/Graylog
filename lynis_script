@@ -1,1 +1,0 @@
-sudo grep -E ‘hardening_index|vulnerable_packages_found|suggestion|warning|lynis_version|lynis_update_available’ /var/log/lynis-report.dat > /var/log/lynis-report-graylog.txt
