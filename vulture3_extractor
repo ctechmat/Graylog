@@ -1,0 +1,36 @@
+{
+      "title": "Vulture_transforme_json_format",
+      "extractor_type": "regex_replace",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "cut",
+      "source_field": "message",
+      "target_field": "message",
+      "extractor_config": {
+        "regex": "^nom_de_votre_serveur * ([a-z0-9]{1,24}) \\@([a-z]{1,3}):\\{",
+        "replacement": "{",
+        "replace_all": true
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "Vulture3_logs",
+      "extractor_type": "json",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "",
+      "extractor_config": {
+        "flatten": false,
+        "list_separator": ", ",
+        "kv_separator": "=",
+        "key_prefix": "",
+        "key_separator": "_",
+        "replace_key_whitespace": false,
+        "key_whitespace_replacement": "_"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
