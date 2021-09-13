@@ -1,0 +1,93 @@
+{
+  "extractors": [
+    {
+      "title": "Lynis_suppr_warning[]=",
+      "extractor_type": "regex_replace",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "warning",
+      "extractor_config": {
+        "regex": "warning\\[\\]\\=",
+        "replacement": " ",
+        "replace_all": true
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "Lynis_lynis_update_available",
+      "extractor_type": "grok",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "",
+      "extractor_config": {
+        "grok_pattern": "lynis_update_available\\=%{NUMBER:lynis_update_availlable}"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "Lynis_lynis_version",
+      "extractor_type": "grok",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "",
+      "extractor_config": {
+        "grok_pattern": "lynis_version\\=%{GREEDYDATA:lynis_version}"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "Lynis_suppr_suggestion[]=",
+      "extractor_type": "regex_replace",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "suggestion",
+      "extractor_config": {
+        "regex": "suggestion\\[\\]\\=",
+        "replacement": " ",
+        "replace_all": true
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "Lynis_hardening_index",
+      "extractor_type": "grok",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "",
+      "extractor_config": {
+        "grok_pattern": "hardening_index\\=%{NUMBER:hardening_index;int}"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "Lynis_vulnerable_package",
+      "extractor_type": "grok",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "",
+      "extractor_config": {
+        "grok_pattern": "vulnerable_packages_found\\=%{NUMBER:vulnerable_packages;int}"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    }
+  ],
+  "version": "3.3.8"
+}
